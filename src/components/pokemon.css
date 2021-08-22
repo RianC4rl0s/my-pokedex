@@ -1,0 +1,40 @@
+.myPokedex{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(180, 25, 25);
+    width: 450px;
+    height: 240px;
+    border-radius: 8px;
+    border: 2px solid gray;
+    display: flex;
+    grid-template-areas: left right;
+    padding: 20px 75px;
+}
+.pokemonCard{
+    margin: 0px;
+    padding: 0px;
+    background-image: url("./holi.png");
+    background-color: #676792;
+    height: 200px;
+    width: 200px;
+    border-radius: 8px;
+    border: 2px solid gray;
+    margin-right: 10px;
+}
+.pokemonCard img{
+    height: 200px;
+    width: 200px;
+    
+}
+
+.pokemonStatus{
+    margin: 0px;
+    padding: 0px;
+    background-image: url("./holi.png");
+    background-color: #676792;
+    height: 200px;
+    width: 200px;
+    border-radius: 8px;
+    border: 2px solid gray;
+    margin-left: 10px;
+}

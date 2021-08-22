@@ -1,7 +1,7 @@
 
 import './App.css';
 import React, { useEffect, useState } from 'react';
-
+import Pokemon from './components/pokemon'
 function App() {
   const [pokemon, setPokemon] = useState([]);
   useEffect(function () {
@@ -15,7 +15,12 @@ function App() {
 
 
   }, [])
-
+  var basePokemon = {
+    name: pokemon?.name.toUpperCase(),
+    height:pokemon?.height,
+    weight:pokemon?.weight,
+    sprite:pokemon.sprites?.front_default,
+  }
 
   return (
     <div>
@@ -30,12 +35,17 @@ function App() {
           .then(function (jsonPromise) {
           
             setPokemon(jsonPromise)
-          })
+            basePokemon = {
+              name: pokemon?.name.toUpperCase(),
+              height:pokemon?.height,
+              weight:pokemon?.weight,
+              sprite:pokemon.sprites?.front_default,
+            }
+
+          })  
           .catch(function(error) {
             console.log('There has been a problem with your fetch operation: ' + error.message);
-          });
-
-
+          });  
 
 
 
@@ -44,10 +54,10 @@ function App() {
         <input name="searchPoke"id="nomePokemon" types="text" placeholder="Pikachu"></input>
         <button>Buscar</button>
       </form>
-      {pokemon.name}< br />
-
-      <img src={pokemon.sprites?.front_default} alt="Pokemon" width="200px"></img><br />
-      Habiliadades
+      
+      <Pokemon pokemon={basePokemon}></Pokemon>
+     
+      Habilidades
       <ul>
         {
           pokemon.abilities?.map((entity) => {
