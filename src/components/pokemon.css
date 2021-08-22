@@ -6,6 +6,8 @@
     font-family: "Pixeld";
     margin: 0px;
     padding: 0px;
+    background-image: url("./background.png") ;
+    background-size: cover;
     background-color: rgb(180, 25, 25);
     width: 450px;
     height: 300px;
@@ -15,12 +17,14 @@
     grid-template-areas: 
       "left right";
     grid-template-columns: 225px 225px;
+    box-shadow: 5px 5px 1px rgb(114, 1, 1);
 }
 .pokemonCard{
     
     margin: 0px;
     padding: 0px;
-    background-image: url("./holi.png");
+    background-image: url("./gif.gif") ;
+    background-size: cover;
     background-color: #676792;
     height: 200px;
     width: 200px;
@@ -40,7 +44,8 @@
     font-size: 12px;
     margin: 0px;
     padding: 0px;
-    background-image: url("./holi.png");
+    background-image: url("./gif.gif") ;
+    background-size: cover;
     background-color: #676792;
     height: 200px;
     width: 200px;

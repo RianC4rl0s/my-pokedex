@@ -62,7 +62,7 @@ function App() {
       
       <Pokemon pokemon={basePokemon}></Pokemon>
      
-      Habilidades
+      Abilities
       <ul>
         {
           pokemon.abilities?.map((entity) => {
@@ -74,7 +74,7 @@ function App() {
           })
         }
       </ul>
-      Tipos
+      Types
       <ul>
         {
           pokemon.types?.map((entity) => {
