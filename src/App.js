@@ -16,10 +16,11 @@ function App() {
 
   }, [])
   var basePokemon = {
-    name: pokemon?.name.toUpperCase(),
+    name: pokemon?.name,
     height:pokemon?.height,
     weight:pokemon?.weight,
     sprite:pokemon.sprites?.front_default,
+    base_experience:pokemon?.base_experience,
   }
 
   return (
@@ -27,19 +28,23 @@ function App() {
       <form onSubmit={function handleSearchPokemon(e) {
         e.preventDefault();
         const formData = new FormData(e.target)
-
-        fetch(`https://pokeapi.co/api/v2/pokemon/${formData.get("searchPoke")}`)
+        let searchName = formData.get("searchPoke").toLowerCase();
+        fetch(`https://pokeapi.co/api/v2/pokemon/${searchName}`)
           .then(function (serverReturn) {
+            if(!serverReturn.ok){
+              throw Error(serverReturn.statusText)
+            }
             return serverReturn.json()
           })
           .then(function (jsonPromise) {
-          
+            
             setPokemon(jsonPromise)
             basePokemon = {
-              name: pokemon?.name.toUpperCase(),
+              name: pokemon?.name,
               height:pokemon?.height,
               weight:pokemon?.weight,
               sprite:pokemon.sprites?.front_default,
+              base_experience:pokemon?.base_experience,
             }
 
           })  

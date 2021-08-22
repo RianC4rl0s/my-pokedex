@@ -1,28 +1,29 @@
 import React from 'react'
 
 import './pokemon.css'
-const pokemon = (props) => {
+const Pokemon = (props) => {
     const pokemon = props.pokemon
-
-    let name = pokemon.name;
-
+   
     return (
         <div className="myPokedex">
             <div className="pokemonCard" aria-label="left">
                 <img src={pokemon.sprite} alt="pokemon"></img>
-
-                {name}
+                {pokemon.name?.toUpperCase()}
             </div >
 
             <div className="pokemonStatus" aria-label="right">
 
                 <ul>
                     <li>
-                        weight:{pokemon.weight}
+                        WEIGHT:{pokemon.weight}
 
                     </li>
                     <li>
-                        height:{pokemon.height}
+                        HEIGHT:{pokemon.height}
+
+                    </li>
+                    <li>
+                        BASE EXPERIENCE:{pokemon?.base_experience}
 
                     </li>
 
@@ -34,4 +35,4 @@ const pokemon = (props) => {
     )
 
 }
-export default pokemon;
+export default Pokemon;
