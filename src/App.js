@@ -118,7 +118,7 @@ function App() {
         <Pokemon pokemon={basePokemon}></Pokemon>
 
         Abilities
-        <ul>
+        <ul className="myList">
           {
             pokemon.abilities?.map((entity) => {
               return (
@@ -130,7 +130,7 @@ function App() {
           }
         </ul>
         Types
-        <ul>
+        <ul className="myList">
           {
             pokemon.types?.map((entity) => {
               return (
@@ -140,9 +140,9 @@ function App() {
               )
             })
           }
-        </ul>
+        </ul >
         Moves
-        <ul>
+        <ul className="myList">
           {
             pokemon.moves?.map((entity, index) => {
               return (
