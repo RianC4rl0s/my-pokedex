@@ -27,8 +27,8 @@ function App() {
   const [pokelist, setPokelist] = useState([]);
   const [currentOffset, setCurrentOffset] = useState(0);
 
-  
-  const [pokeListFinal,setPokeListFInal] = useState([])
+
+  const [pokeListFinal, setPokeListFinal] = useState([])
   useEffect(() => {
     const perPage = 25;
     const ENDPOINT = 'https://pokeapi.co/api/v2'
@@ -38,7 +38,7 @@ function App() {
       .then((response) => response.json())
       .then((newPokemons) => {
         let test = newPokemons?.results
-    
+
         return (setPokelist((prevPokemons) => [...prevPokemons, ...test]))
 
       }
@@ -50,30 +50,33 @@ function App() {
       if (entries.some(entry => entry.isIntersecting)) {
         console.log("sentileaApareceu", currentOffset)
         setCurrentOffset((currentValue) => currentValue + 25)
+       
       }
     })
     intersectionObserver.observe(document.querySelector('#sentinela'));
     return () => intersectionObserver.disconnect();
   }, [])
-  
 
-  useEffect(()=>{
 
-    pokelist?.map((entity)=>{
-       
-      console.log('URL',entity.url)
+  useEffect(() => {
+
+    pokelist?.map((entity) => {
+
+     // console.log('URL', entity.url)
       fetch(entity.url)
         .then(function (serverReturn) {
           return serverReturn.json()
         })
         .then(function (jsonPromise) {
-          return (setPokeListFInal((prevPokemons) => [...prevPokemons,jsonPromise]))
+          return (setPokeListFinal((prevPokemons) => [...prevPokemons, jsonPromise]))
+          
+          
         })
-
+      
     })
 
-  },[pokelist])
-
+  }, [pokelist])
+  console.log(pokeListFinal)
   return (
     <div className="pokemon">
       <div className="pokeInfo">
@@ -158,11 +161,11 @@ function App() {
             pokeListFinal.map((entity, index) => {
               return (
                 <li key={entity.name + index}>
-                  
-                  <div>
-                    <img src={entity.sprites?.front_default}></img>
-                    {entity.name}
-                  </div>
+
+
+                  <img src={entity.sprites?.front_default}></img>
+                  {entity.name}
+
                 </li>
               )
             })
