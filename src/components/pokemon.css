@@ -2,11 +2,12 @@
     font-family: "Pixeld";
     src: url("./../fonts/Pixeled.ttf") format('truetype');
 }
-.myPokedex{
+
+.myPokedex {
     font-family: "Pixeld";
     margin: 0px;
     padding: 0px;
-    background-image: url("./background.png") ;
+    background-image: url("./background.png");
     background-size: cover;
     background-color: rgb(180, 25, 25);
     width: 450px;
@@ -14,16 +15,15 @@
     border-radius: 8px;
     border: 2px solid gray;
     display: grid;
-    grid-template-areas: 
-      "left right";
+    grid-template-areas: "left right";
     grid-template-columns: 225px 225px;
     box-shadow: 5px 5px 1px rgb(114, 1, 1);
 }
-.pokemonCard{
-    
+
+.pokemonCard {
     margin: 0px;
     padding: 0px;
-    background-image: url("./gif.gif") ;
+    background-image: url("./gif.gif");
     background-size: cover;
     background-color: #676792;
     height: 200px;
@@ -34,17 +34,17 @@
     margin-left: 10px;
     margin-top: 20px;
 }
-.pokemonCard img{
+
+.pokemonCard img {
     height: 200px;
     width: 200px;
-    
 }
 
-.pokemonStatus{
+.pokemonStatus {
     font-size: 12px;
     margin: 0px;
     padding: 0px;
-    background-image: url("./gif.gif") ;
+    background-image: url("./gif.gif");
     background-size: cover;
     background-color: #676792;
     height: 200px;
@@ -54,4 +54,12 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
+}
+
+@media(min-width: 900px) {
+    .pokemon {
+        display: grid;
+        grid-template-areas: "pokeINfo pokeList";
+        grid-template-columns: 500px 1fr;
+    }
 }
