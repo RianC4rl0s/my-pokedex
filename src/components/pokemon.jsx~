@@ -3,7 +3,7 @@ import React from 'react'
 import './pokemon.css'
 const Pokemon = (props) => {
     const pokemon = props.pokemon
-    
+   
     return (
         <div className="myPokedex">
             <div className="pokemonCard" aria-label="left">

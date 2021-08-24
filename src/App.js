@@ -170,8 +170,8 @@ function App() {
               )
             })
           }
-          <li id="sentinela"></li>
         </ul>
+          <div id="sentinela" ></div>
       </div>
     </div>
   );
